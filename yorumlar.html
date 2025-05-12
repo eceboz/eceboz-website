@@ -1,54 +1,41 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yorum Yap | Parfüm Dünyası</title>
-  <link rel="stylesheet" href="styles/style.css" />
+    <meta charset="UTF-8">
+    <title>Yorumlar</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">Ana Sayfa</a></li>
-        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-        <li><a href="urunler.html">Ürünler</a></li>
-        <li><a href="yorumlar.html">Yorum Yap</a></li>
-        <li><a href="yorumlar-goster.html">Yorumlar</a></li>
-        <li><a href="kayit.html">Kayıt</a></li>
-        <li><a href="kayitlar.html">Kayıtlar</a></li>
-        <li><a href="siparis.html">Sipariş</a></li>
-        <li><a href="siparisler.html">Siparişler</a></li>
-        <li><a href="iletisim.html">İletişim</a></li>
-        <li><a href="galeri.html">Galeri</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- İçerik -->
-  <main>
+<header>
     <h1>Yorum Yap</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="urunler.html">Ürünler</a></li>
+            <li><a href="kayitlar.html">Kayıtlar</a></li>
+            <li><a href="kayit-listele.html">Kayıt Listele</a></li>
+            <li><a href="urun-listele.html">Ürün Listele</a></li>
+            <li><a href="sorular.html">Sık Sorulan Sorular</a></li>
+            <li><a href="siparis.html">Sipariş</a></li>
+            <li><a href="siparis-listele.html">Sipariş Listele</a></li>
+            <li><a href="yorumlar.html">Yorumlar</a></li>
+            <li><a href="yorum-listele.html">Yorumları Listele</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
     <form id="yorumForm">
-      <label for="ad">Ad Soyad:</label><br />
-      <input type="text" id="ad" name="ad" required /><br /><br />
-
-      <label for="email">E-Posta:</label><br />
-      <input type="email" id="email" name="email" required /><br /><br />
-
-      <label for="yorum">Yorumunuz:</label><br />
-      <textarea id="yorum" name="yorum" rows="5" required></textarea><br /><br />
-
-      <button type="submit">Yorumu Gönder</button>
+        <label>Adınız: <input type="text" id="yorumAd" required></label><br>
+        <label>Yorumunuz: <textarea id="yorumMetni" required></textarea></label><br>
+        <button type="submit">Yorum Yap</button>
     </form>
-  </main>
+</main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Parfüm Dünyası | Tüm Hakları Saklıdır.</p>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="scripts/myscript.js"></script>
+<footer>
+    <p>&copy; 2025 Butik - Tüm Hakları Saklıdır</p>
+</footer>
 </body>
 </html>

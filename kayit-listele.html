@@ -2,12 +2,12 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Kayıtlar</title>
+    <title>Kayıt Listele</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 <header>
-    <h1>Kayıt Ol</h1>
+    <h1>Kayıtlı Kullanıcılar</h1>
     <nav>
         <ul>
             <li><a href="index.html">Ana Sayfa</a></li>
@@ -26,11 +26,8 @@
 </header>
 
 <main>
-    <form id="kayitForm">
-        <label>Ad Soyad: <input type="text" id="adSoyad" required></label><br>
-        <label>Email: <input type="email" id="email" required></label><br>
-        <button type="submit">Kaydet</button>
-    </form>
+    <h2>Kayıtlar:</h2>
+    <ul id="kayitListe"></ul>
 </main>
 
 <footer>
@@ -38,17 +35,13 @@
 </footer>
 
 <script>
-    document.getElementById('kayitForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const kayit = {
-            ad: document.getElementById('adSoyad').value,
-            email: document.getElementById('email').value
-        };
-        let kayitlar = JSON.parse(localStorage.getItem('kayitlar')) || [];
-        kayitlar.push(kayit);
-        localStorage.setItem('kayitlar', JSON.stringify(kayitlar));
-        alert("Kayıt başarıyla eklendi!");
-        this.reset();
+    const liste = document.getElementById("kayitListe");
+    const kayitlar = JSON.parse(localStorage.getItem("kayitlar")) || [];
+
+    kayitlar.forEach((k, i) => {
+        const li = document.createElement("li");
+        li.textContent = `${i + 1}. ${k.ad} - ${k.email}`;
+        liste.appendChild(li);
     });
 </script>
 </body>
