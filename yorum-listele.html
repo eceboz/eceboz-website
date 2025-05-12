@@ -2,12 +2,13 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Kayıtlar</title>
+    <title>Yorumları Listele</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
 <header>
-    <h1>Kayıt Ol</h1>
+    <h1>Yorumları Listele</h1>
     <nav>
         <ul>
             <li><a href="index.html">Ana Sayfa</a></li>
@@ -26,30 +27,12 @@
 </header>
 
 <main>
-    <form id="kayitForm">
-        <label>Ad Soyad: <input type="text" id="adSoyad" required></label><br>
-        <label>Email: <input type="email" id="email" required></label><br>
-        <button type="submit">Kaydet</button>
-    </form>
+    <h2>Tüm Yorumlar</h2>
+    <div id="yorumListesi"></div>
 </main>
 
 <footer>
     <p>&copy; 2025 Butik - Tüm Hakları Saklıdır</p>
 </footer>
-
-<script>
-    document.getElementById('kayitForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const kayit = {
-            ad: document.getElementById('adSoyad').value,
-            email: document.getElementById('email').value
-        };
-        let kayitlar = JSON.parse(localStorage.getItem('kayitlar')) || [];
-        kayitlar.push(kayit);
-        localStorage.setItem('kayitlar', JSON.stringify(kayitlar));
-        alert("Kayıt başarıyla eklendi!");
-        this.reset();
-    });
-</script>
 </body>
 </html>

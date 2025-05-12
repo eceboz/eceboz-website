@@ -2,12 +2,13 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Kayıtlar</title>
+    <title>Ürün Listele</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
 <header>
-    <h1>Kayıt Ol</h1>
+    <h1>Kayıtlı Ürünler</h1>
     <nav>
         <ul>
             <li><a href="index.html">Ana Sayfa</a></li>
@@ -26,11 +27,18 @@
 </header>
 
 <main>
-    <form id="kayitForm">
-        <label>Ad Soyad: <input type="text" id="adSoyad" required></label><br>
-        <label>Email: <input type="email" id="email" required></label><br>
-        <button type="submit">Kaydet</button>
-    </form>
+    <section class="urun-bilgi">
+  <h2>Ürün Listesi</h2>
+  <p>
+    Şu anda listelenecek bir ürün bulunmamaktadır. Ürünleri görmek için önce <a href="urunler.html">Ürünler</a> sayfasından ürün ekleyiniz.
+  </p>
+  <p>
+    Ürün ekledikten sonra, bu sayfada eklediğiniz ürünler otomatik olarak görüntülenecektir.
+  </p>
+</section>
+
+    <h2>Ürün Listesi:</h2>
+    <ul id="urunListesi"></ul>
 </main>
 
 <footer>
@@ -38,17 +46,13 @@
 </footer>
 
 <script>
-    document.getElementById('kayitForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const kayit = {
-            ad: document.getElementById('adSoyad').value,
-            email: document.getElementById('email').value
-        };
-        let kayitlar = JSON.parse(localStorage.getItem('kayitlar')) || [];
-        kayitlar.push(kayit);
-        localStorage.setItem('kayitlar', JSON.stringify(kayitlar));
-        alert("Kayıt başarıyla eklendi!");
-        this.reset();
+    const urunListesi = document.getElementById("urunListesi");
+    const urunler = JSON.parse(localStorage.getItem("urunler")) || [];
+
+    urunler.forEach((u, i) => {
+        const li = document.createElement("li");
+        li.textContent = `${i + 1}. ${u.adi} - ${u.fiyat} TL`;
+        urunListesi.appendChild(li);
     });
 </script>
 </body>
