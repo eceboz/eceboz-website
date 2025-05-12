@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hakkımızda | Parfüm Dünyası</title>
-  <!-- Harici CSS bağlantısı -->
+  <title>Sipariş Ver</title>
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <!-- Ortak Navbar Başlangıcı -->
   <header>
     <nav class="navbar">
       <ul>
@@ -26,28 +24,32 @@
       </ul>
     </nav>
   </header>
-  <!-- Ortak Navbar Bitişi -->
 
-  <!-- Sayfa içeriği -->
   <main>
-    <h1>Hakkımızda</h1>
-    <p>
-      Parfüm Dünyası olarak, yıllardır müşterilerimize en özel ve kalıcı kokuları sunmayı amaçlıyoruz.
-      Her zevke uygun parfümlerimizle, kaliteden ödün vermeden hizmet veriyoruz.
-    </p>
-    <p>
-      Ürünlerimizin tamamı dermatolojik testlerden geçmiştir. Sunduğumuz hizmette müşteri memnuniyeti
-      ve güven önceliğimizdir.
-    </p>
+    <h1>Sipariş Ver</h1>
+    <form id="siparisForm">
+      <label for="isim">Ad Soyad:</label><br />
+      <input type="text" id="isim" required /><br /><br />
+
+      <label for="urun">Ürün Seçin:</label><br />
+      <select id="urun" required>
+        <option value="">Seçiniz</option>
+        <option value="Gül Esansı">Gül Esansı</option>
+        <option value="Okyanus Ferahlığı">Okyanus Ferahlığı</option>
+        <option value="Gece Bahçesi">Gece Bahçesi</option>
+      </select><br /><br />
+
+      <label for="adet">Adet:</label><br />
+      <input type="number" id="adet" min="1" required /><br /><br />
+
+      <button type="submit">Siparişi Kaydet</button>
+    </form>
   </main>
 
-  <!-- Ortak Footer Başlangıcı -->
   <footer>
     <p>&copy; 2025 Parfüm Dünyası | Tüm Hakları Saklıdır.</p>
   </footer>
-  <!-- Ortak Footer Bitişi -->
 
-  <!-- Harici JS bağlantısı -->
   <script src="scripts/myscript.js"></script>
 </body>
 </html>
